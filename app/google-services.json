@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040226680996",
+    "project_id": "studentmatchingsystem-40c30",
+    "storage_bucket": "studentmatchingsystem-40c30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040226680996:android:0bfe1ddc2af2f379b8e631",
+        "android_client_info": {
+          "package_name": "com.example.student_matching_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040226680996-3v019hk8hp0fatrdndabo8jo3mnc5ktd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATCgG5JroIdphvhszxhnfT1DujQBvgLk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040226680996-3v019hk8hp0fatrdndabo8jo3mnc5ktd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
