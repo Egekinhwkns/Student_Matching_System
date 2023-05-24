@@ -20,23 +20,22 @@ import java.lang.Exception
 import java.lang.StringBuilder
 
 class Landing : AppCompatActivity() {
-    private var addButton: Button? = null
     private var ppView: ImageView? = null
     private var rv: RecyclerView? = null
     private var dataSets = mutableListOf<PoolSharedItem>()
     val poolData = mutableListOf<studentModel>()
+    var str = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
 
-        addButton = findViewById(R.id.addButton)
         ppView = findViewById(R.id.ppView)
         ppView?.clipToOutline= true
         rv = findViewById(R.id.recyclerView)
         rv?.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL))
 
-        val str = readFromFile()
+        str = readFromFile()!!
         val img = FirebaseStorage.getInstance().reference.child("students/${str}pp.jpg")
         val FIVE_MEGABYTE: Long = 1024 * 1024 * 5
         img.getBytes(FIVE_MEGABYTE).addOnSuccessListener { response ->
@@ -47,6 +46,10 @@ class Landing : AppCompatActivity() {
                     response.size
                 )
             )
+        }.addOnFailureListener {
+            // Handle any errors
+            ppView?.setImageResource(R.drawable.empty)
+            //Toast.makeText(this, "${str}", Toast.LENGTH_SHORT).show()
         }
 
         ppView?.setOnClickListener {
@@ -54,13 +57,7 @@ class Landing : AppCompatActivity() {
             startActivity(intent)
         }
 
-        addButton?.setOnClickListener {
-            //val intent = Intent(this, addContent::class.java)
-            //startActivity(intent)
-        }
-
         rv?.layoutManager = LinearLayoutManager(this)
-        rv
         getPoolItems()
 
     }
@@ -92,7 +89,6 @@ class Landing : AppCompatActivity() {
                 val sharedItems = PoolSharedItem(name,surname,status,username)
                 dataSets.add(sharedItems)
             }
-            //Toast.makeText(this,"asdf" + dataSets, Toast.LENGTH_SHORT).show()
 
             for (dataset in dataSets){
 
@@ -102,11 +98,12 @@ class Landing : AppCompatActivity() {
                 var username = dataset.username
                 var status = dataset.status
 
-                //paylasılan resim
-                //val img = FirebaseStorage.getInstance().reference.child("imagePool/${dataset.username}/${dataset.poolid}.jpg")
-                val FIVE_MEGABYTE: Long = 1024 * 1024 * 5
-                //img.getBytes(FIVE_MEGABYTE).addOnSuccessListener { response ->
-                //    imgPool = response
+                if(username != str){
+                    //paylasılan resim
+                    //val img = FirebaseStorage.getInstance().reference.child("imagePool/${dataset.username}/${dataset.poolid}.jpg")
+                    val FIVE_MEGABYTE: Long = 1024 * 1024 * 5
+                    //img.getBytes(FIVE_MEGABYTE).addOnSuccessListener { response ->
+                    //    imgPool = response
                     //pp
 
                     val img = FirebaseStorage.getInstance().reference.child("students/${dataset.username}pp.jpg")
@@ -126,9 +123,15 @@ class Landing : AppCompatActivity() {
                     }.addOnFailureListener {it ->
                         val fullname = name + " " + surname
                         poolData.add(studentModel(pp,fullname,status!!,username!!))
+                        rv?.adapter = poolAdapter(poolData){it ->
+                            // burada karşı profile gidilecek.
+                            val intent = Intent(this, StudentProfile::class.java)
+                            intent.putExtra("Username", it.username)
+                            startActivity(intent)
+                            //Toast.makeText(this,it.poolName, Toast.LENGTH_SHORT).show()
+                        }
                     }
-                //}
-
+                }
             }
         }
     }

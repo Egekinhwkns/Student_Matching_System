@@ -37,6 +37,8 @@ class Profile : AppCompatActivity() {
     private var profileFortime: EditText? = null
     private var profilePhone: EditText? = null
     private var profileSaveButton: Button? = null
+    private var waitingSharingButton: Button? = null
+    private var sharingButton: Button? = null
     private var profilePassword: EditText? = null
     private var cameraButton: Button? = null
     private var galleryButton: Button? = null
@@ -69,8 +71,20 @@ class Profile : AppCompatActivity() {
         profilePassword = findViewById<EditText>(R.id.passwordProfile)
         galleryButton = findViewById<Button>(R.id.GalleryButtonProfile)
         cameraButton = findViewById<Button>(R.id.CamerabuttonProfile)
+        waitingSharingButton = findViewById<Button>(R.id.waitingButton)
+        sharingButton = findViewById<Button>(R.id.SharingButton)
 
         configureUI()
+
+        waitingSharingButton!!.setOnClickListener{
+            val intent = Intent(this, SharedList::class.java)
+            startActivity(intent)
+        }
+
+        sharingButton!!.setOnClickListener{
+            val intent = Intent(this, FinalSharedList::class.java)
+            startActivity(intent)
+        }
 
         profileSaveButton?.setOnClickListener {
 

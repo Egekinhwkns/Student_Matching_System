@@ -116,7 +116,7 @@ class StudentProfile : AppCompatActivity() {
         )
 
         profileSendRequestButton!!.setOnClickListener{
-            db.collection("waitingShared").document().set(shared)
+            db.collection("waitingShared").document(str + " " + forSearch).set(shared)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Paylaşım İsteği Gönderildi.", Toast.LENGTH_SHORT).show()
                     finish();
@@ -187,7 +187,7 @@ class StudentProfile : AppCompatActivity() {
 
         var kontrol = false
         for (data in dataSets) {
-            if((data.student1 == str || data.student2 == forSearch) && (data.student1 == forSearch || data.student2 == str)){
+            if((data.student1 == str && data.student2 == forSearch) || (data.student1 == forSearch && data.student2 == str)){
                 kontrol = true
             }
         }

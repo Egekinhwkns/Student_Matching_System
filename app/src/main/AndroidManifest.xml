@@ -20,6 +20,12 @@
         android:theme="@style/Theme.Student_Matching_System"
         tools:targetApi="31">
         <activity
+            android:name=".FinalSharedList"
+            android:exported="false" />
+        <activity
+            android:name=".SharedList"
+            android:exported="false" />
+        <activity
             android:name=".StudentProfile"
             android:exported="false" />
         <activity
@@ -44,12 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AddContent"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
