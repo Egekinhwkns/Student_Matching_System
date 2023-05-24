@@ -23,6 +23,7 @@ class Landing : AppCompatActivity() {
     private var addButton: Button? = null
     private var ppView: ImageView? = null
     private var rv: RecyclerView? = null
+    private var dataSets = mutableListOf<PoolSharedItem>()
     val poolData = mutableListOf<studentModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +60,7 @@ class Landing : AppCompatActivity() {
         }
 
         rv?.layoutManager = LinearLayoutManager(this)
+        rv
         getPoolItems()
 
     }
@@ -81,7 +83,6 @@ class Landing : AppCompatActivity() {
     }
     fun getPoolItems(){
         val db = Firebase.firestore
-        var dataSets = mutableListOf<PoolSharedItem>()
         db.collection("students").get().addOnSuccessListener { documents ->
             for (document in documents) {
                 val name = document["name"].toString()
@@ -112,13 +113,19 @@ class Landing : AppCompatActivity() {
                     img.getBytes(FIVE_MEGABYTE).addOnSuccessListener { response ->
                         pp = response
                         val fullname = name + " " + surname
-                        poolData.add(studentModel(pp,fullname,status!!))
+                        poolData.add(studentModel(pp,fullname,status!!, username!!))
                         //Toast.makeText(this,"asdf" + poolData.size, Toast.LENGTH_SHORT).show()
-                        rv?.adapter = poolAdapter(poolData)
+                        rv?.adapter = poolAdapter(poolData){it ->
+                            // burada karşı profile gidilecek.
+                            val intent = Intent(this, StudentProfile::class.java)
+                            intent.putExtra("Username", it.username)
+                            startActivity(intent)
+                            //Toast.makeText(this,it.poolName, Toast.LENGTH_SHORT).show()
+                        }
                         //Toast.makeText(this,"${poolData}", Toast.LENGTH_SHORT).show()
-                    }.addOnFailureListener {
+                    }.addOnFailureListener {it ->
                         val fullname = name + " " + surname
-                        poolData.add(studentModel(pp,fullname,status!!))
+                        poolData.add(studentModel(pp,fullname,status!!,username!!))
                     }
                 //}
 

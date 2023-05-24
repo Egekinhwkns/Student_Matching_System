@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".StudentProfile">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -39,11 +39,11 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Email"
-                app:layout_constraintBottom_toTopOf="@+id/profileEmailPT"
+                app:layout_constraintBottom_toTopOf="@+id/profileEmailPT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageView2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="30dp"
@@ -55,7 +55,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <EditText
-                android:id="@+id/profileNamePT"
+                android:id="@+id/profileNamePT2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -63,25 +63,27 @@
                 android:layout_marginEnd="30dp"
                 android:ems="10"
                 android:inputType="text"
+                android:focusable="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <EditText
-                android:id="@+id/profileSurnamePT"
+                android:id="@+id/profileSurnamePT2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="50dp"
+                android:focusable="false"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileNamePT" />
+                app:layout_constraintTop_toBottomOf="@+id/profileNamePT2" />
 
             <EditText
-                android:id="@+id/profileUsernamePT"
+                android:id="@+id/profileUsernamePT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -93,13 +95,14 @@
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <EditText
-                android:id="@+id/ebProfilePT"
+                android:id="@+id/ebProfilePT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
+                android:focusable="false"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
@@ -108,28 +111,30 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileUsernamePT" />
+                app:layout_constraintTop_toBottomOf="@+id/profileUsernamePT2" />
 
             <EditText
-                android:id="@+id/profileEmailPT"
+                android:id="@+id/profileEmailPT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
+                android:focusable="false"
                 android:ems="10"
                 android:inputType="text"
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ebProfilePT" />
+                app:layout_constraintTop_toBottomOf="@+id/ebProfilePT2" />
 
             <EditText
-                android:id="@+id/statusProfilePT"
+                android:id="@+id/statusProfilePT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
+                android:focusable="false"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
@@ -137,10 +142,25 @@
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileEmailPT" />
+                app:layout_constraintTop_toBottomOf="@+id/profileEmailPT2" />
 
             <EditText
-                android:id="@+id/maxDistanceProfilePT"
+                android:id="@+id/maxDistanceProfilePT2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:focusable="false"
+                android:ems="10"
+                android:inputType="number"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/statusProfilePT2" />
+
+            <EditText
+                android:id="@+id/timeProfilePT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -148,41 +168,29 @@
                 android:layout_marginEnd="30dp"
                 android:ems="10"
                 android:inputType="number"
+                android:focusable="false"
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/statusProfilePT" />
+                app:layout_constraintTop_toBottomOf="@+id/maxDistanceProfilePT2" />
 
             <EditText
-                android:id="@+id/timeProfilePT"
+                android:id="@+id/profilePhonePT2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
+                android:focusable="false"
                 android:inputType="number"
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/maxDistanceProfilePT" />
+                app:layout_constraintTop_toBottomOf="@+id/timeProfilePT2" />
 
             <EditText
-                android:id="@+id/profilePhonePT"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="30dp"
-                android:ems="10"
-                android:inputType="number"
-                android:text="Name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/timeProfilePT" />
-
-            <EditText
-                android:id="@+id/passwordProfile"
+                android:id="@+id/passwordProfile2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -191,10 +199,11 @@
                 android:ems="10"
                 android:inputType="text|textPassword"
                 android:text="Name"
+                android:focusable="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilePhonePT" />
+                app:layout_constraintTop_toBottomOf="@+id/profilePhonePT2" />
 
             <TextView
                 android:id="@+id/tv3"
@@ -203,7 +212,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Maksimum Uzaklık"
-                app:layout_constraintBottom_toTopOf="@+id/maxDistanceProfilePT"
+                app:layout_constraintBottom_toTopOf="@+id/maxDistanceProfilePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -213,7 +222,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Telefon Numarası"
-                app:layout_constraintBottom_toTopOf="@+id/profilePhonePT"
+                app:layout_constraintBottom_toTopOf="@+id/profilePhonePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -223,7 +232,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Şifre"
-                app:layout_constraintBottom_toTopOf="@+id/passwordProfile"
+                app:layout_constraintBottom_toTopOf="@+id/passwordProfile2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -233,7 +242,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Kullanıcı Adı"
-                app:layout_constraintBottom_toTopOf="@+id/profileUsernamePT"
+                app:layout_constraintBottom_toTopOf="@+id/profileUsernamePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -243,7 +252,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Kullanıcı Adı"
-                app:layout_constraintBottom_toTopOf="@+id/profileUsernamePT"
+                app:layout_constraintBottom_toTopOf="@+id/profileUsernamePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -253,7 +262,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Soyisim"
-                app:layout_constraintBottom_toTopOf="@+id/profileSurnamePT"
+                app:layout_constraintBottom_toTopOf="@+id/profileSurnamePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -263,7 +272,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="İsim"
-                app:layout_constraintBottom_toTopOf="@+id/profileNamePT"
+                app:layout_constraintBottom_toTopOf="@+id/profileNamePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -273,7 +282,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Durum"
-                app:layout_constraintBottom_toTopOf="@+id/statusProfilePT"
+                app:layout_constraintBottom_toTopOf="@+id/statusProfilePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -283,7 +292,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Süre (ay)"
-                app:layout_constraintBottom_toTopOf="@+id/timeProfilePT"
+                app:layout_constraintBottom_toTopOf="@+id/timeProfilePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -293,44 +302,23 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="5dp"
                 android:text="Eğitim Bilgileri"
-                app:layout_constraintBottom_toTopOf="@+id/ebProfilePT"
+                app:layout_constraintBottom_toTopOf="@+id/ebProfilePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/profileSaveButton"
+                android:id="@+id/profileSaveButton2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="30dp"
-                android:text="Değişiklikleri Kaydet"
+                android:text="Paylaşım İsteği Yolla"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordProfile" />
+                app:layout_constraintTop_toBottomOf="@+id/passwordProfile2" />
 
-            <Button
-                android:id="@+id/GalleryButtonProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginBottom="10dp"
-                android:text="Galeriden Seç"
-                app:layout_constraintBottom_toTopOf="@+id/CamerabuttonProfile"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/CamerabuttonProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="5dp"
-                android:text="Kamera Kullan"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/GalleryButtonProfile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
