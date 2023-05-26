@@ -42,13 +42,15 @@
                 app:layout_constraintBottom_toTopOf="@+id/profileEmailPT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:shapeAppearanceOverlay="@style/circleImageView"
                 android:id="@+id/imageView2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="70dp"
-                android:background="@drawable/round_outline"
                 android:clipToOutline="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -189,22 +191,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/timeProfilePT2" />
 
-            <EditText
-                android:id="@+id/passwordProfile2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="30dp"
-                android:ems="10"
-                android:inputType="text|textPassword"
-                android:text="Name"
-                android:focusable="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilePhonePT2" />
-
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="wrap_content"
@@ -225,15 +211,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/profilePhonePT2"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tv4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginBottom="5dp"
-                android:text="Şifre"
-                app:layout_constraintBottom_toTopOf="@+id/passwordProfile2"
-                app:layout_constraintStart_toStartOf="parent" />
+
 
             <TextView
                 android:id="@+id/usernameTV"
@@ -317,7 +295,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordProfile2" />
+                app:layout_constraintTop_toBottomOf="@+id/profilePhonePT2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

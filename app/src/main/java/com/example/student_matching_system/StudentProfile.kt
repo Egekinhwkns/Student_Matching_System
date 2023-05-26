@@ -32,7 +32,6 @@ class StudentProfile : AppCompatActivity() {
     private var profileFortime: EditText? = null
     private var profilePhone: EditText? = null
     private var profileSendRequestButton: Button? = null
-    private var profilePassword: EditText? = null
     private var waitingDataSets = mutableListOf<Shared>()
     private var dataSets = mutableListOf<Shared>()
     private var str: String? = null
@@ -57,7 +56,6 @@ class StudentProfile : AppCompatActivity() {
         profileFortime = findViewById<EditText>(R.id.timeProfilePT2)
         profilePhone = findViewById<EditText>(R.id.profilePhonePT2)
         profileSendRequestButton = findViewById<Button>(R.id.profileSaveButton2)
-        profilePassword = findViewById<EditText>(R.id.passwordProfile2)
 
 
         profileSendRequestButton!!.isClickable = false
@@ -161,7 +159,6 @@ class StudentProfile : AppCompatActivity() {
                 profileFortime?.setText(student?.forTime)
                 profilePhone?.setText(student?.telNo)
                 profileStatus?.setText(student?.status)
-                profilePassword?.setText(student?.password)
             }
         }
     }

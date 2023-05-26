@@ -19,13 +19,15 @@
         app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        app:shapeAppearanceOverlay="@style/circleImageView"
         android:id="@+id/ppView"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="6dp"
-        android:background="@drawable/round_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />

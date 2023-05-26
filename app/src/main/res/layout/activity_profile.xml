@@ -42,13 +42,15 @@
                 app:layout_constraintBottom_toTopOf="@+id/profileEmailPT"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                app:shapeAppearanceOverlay="@style/circleImageView"
                 android:id="@+id/imageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="70dp"
-                android:background="@drawable/round_outline"
                 android:clipToOutline="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
